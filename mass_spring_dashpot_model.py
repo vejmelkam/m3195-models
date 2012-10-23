@@ -3,15 +3,12 @@
 Created on Mon Oct 22 21:07:22 2012
 
 @author: martin
-"""
 
-"""
 This code creates, simulates and animates a free vibrations system (spring,
-dashpot, mass) in a car unicycle model.
+dashpot, mass) in a car unicycle model.  Build from example lorenz_ui.py
 """
-# Author: Prabhu Ramachandran <prabhu@aero.iitb.ac.in>
-# Copyright (c) 2008-2009, Enthought, Inc.
-# License: BSD Style.
+# Author: Martin Vejmelka <vejmelkam@gmail.com>
+# License: GPLv3
 
 import matplotlib
 matplotlib.use('WxAgg')
@@ -124,10 +121,10 @@ class UnicycleModel(HasTraits):
                         label = 'Predefined parameters',
                         show_border = True),
                     Group(
-                        Item('lambda1', style = 'readonly'),
-                        Item('lambda2', style = 'readonly'),
-                        Item('omega0', style = 'readonly'),
-                        Item('omega1', style = 'readonly'),
+                        Item('lambda1', style = 'readonly', width = 180),
+                        Item('lambda2', style = 'readonly', width = 180),
+                        Item('omega0', style = 'readonly', format_str = '%g', width = 100),
+                        Item('omega1', style = 'readonly', format_str = '%g', width = 100),
                         label = 'Char. eq. roots',
                         show_border = True))
                     ),
