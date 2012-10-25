@@ -10,11 +10,6 @@ dashpot, m) in a car unicycle model.  Build from example lorenz_ui.py
 # Author: Martin Vejmelka <vejmelkam@gmail.com>
 # License: GPLv3
 
-#import matplotlib
-#matplotlib.use('WxAgg')
-#matplotlib.interactive(True)
-#import matplotlib.pyplot as plt
-
 import numpy as np
 import scipy.integrate as sci
 
@@ -144,20 +139,11 @@ class MSDModel(HasTraits):
     @on_trait_change('scene.activated')
     def create_unicycle(self):
         visual.set_viewer(self.scene)
-#        self.wheel = visual.cylinder(color = (0.2, 0.5, 0.5), pos = (-0.1, 0.4, 0), radius = 0.4, length = 0.2)
-#        self.axle = visual.cylinder(color = (0.2, 0.5, 0.5), pos = (-0.2, 0.4, 0), radius = 0.05, length = 0.4)
-#        self.supp1 = visual.box(color = (0.2, 0.5, 0.5), pos = (-0.18, 0.7, 0), length = 0.04, height = 0.6, width = 0.04)
-#        self.supp2 = visual.box(color = (0.2, 0.5, 0.5), pos = (0.18, 0.7, 0), length = 0.04, height = 0.6, width = 0.04)
         self.wheel_top = visual.box(color = (0.2, 0.5, 0.5), pos = (0, 1.0, 0), length = 1.6, width = 1.6, height = 0.04)
         self.spring = visual.helix(coils = 8, axis = (0.0, 1.0, 0.0), color = (0.8, 0.2, 0.8), pos = (0.14, 1.0, 0), radius = 0.1, length = 0.5)
         self.car = visual.box(color = (0.2, 0.2, 0.8), pos = (0.0, 1.7, 0.0), length = 0.6, height = 0.4, width = 0.6)
         self.dash_top = visual.cylinder(axis = (0.0, -1.0, 0.0), color = (0.8, 0.8, 0.2), pos = (-0.14, 1.7, 0.0), radius = 0.1, length = 0.3)
         self.dash_bottom = visual.cylinder(axis = (0.0, 1.0, 0.0), color = (0.8, 0.8, 0.2), pos = (-0.14, 1.0, 0.0), radius = 0.05, length = 0.6)
-        
-#        self.rim1 = visual.cylinder(axis = (0.0, 0.0, 1.0), color = (0.0,0.0,0.0), pos = (0.0, 0.4, -0.35), radius = 0.11, length = 0.7)
-#        self.rim2 = visual.cylinder(axis = (0.0, 1.0, 0.0), color = (0.0,0.0,0.0), pos = (0.0, 0.05, 0.0), radius = 0.11, length = 0.7)
-#        self.road_a = visual.box(color = (0.2, 0.2, 0.2), pos = (0.0, -0.05, -0.5), length = 1.0, height = 0.1, width = 0.98)
-#        self.road_b = visual.box(color = (0.2, 0.2, 0.2), pos = (0.0, -0.05, 0.5), length = 1.0, height = 0.1, width = 0.98)
 
         self.scene.camera.azimuth(45)
         self.scene.camera.elevation(20)
